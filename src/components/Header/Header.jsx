@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { navLinks } from '../../data/navLinks';
+import { useCart } from '../../hooks/CartContext';
 import './Header.css';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { totalCount } = useCart();
 
   return (
     <header className="header">
@@ -35,15 +37,16 @@ function Header() {
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </button>
-          <button className="header__icon-btn" aria-label="Carrito">
+          
+          <Link to="/cart" className="header__icon-btn" aria-label="Carrito">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M6 6h15l-1.5 9h-12z" />
               <circle cx="9" cy="20" r="1" />
               <circle cx="18" cy="20" r="1" />
               <path d="M6 6L4 2H2" />
             </svg>
-            <span className="header__cart-count">0</span>
-          </button>
+            {totalCount > 0 && <span className="header__cart-count">{totalCount}</span>}
+          </Link>
 
           <button
             className={`header__burger ${menuOpen ? 'header__burger--open' : ''}`}
