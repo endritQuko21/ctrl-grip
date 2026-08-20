@@ -152,6 +152,19 @@
   color: var(--color-fog);
 }
 
+.cart__error {
+  color: #ff5c5c;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.cart__checkout-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* Responsive */
 @media (max-width: 700px) {
   .cart-item {

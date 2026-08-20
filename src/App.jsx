@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import Shop from './pages/Shop/Shop';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Cart from './pages/Cart/Cart';
+import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/shop/:category" element={<Shop />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
       </Routes>
       <Footer />
     </BrowserRouter>

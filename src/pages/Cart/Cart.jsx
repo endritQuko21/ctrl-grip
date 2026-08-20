@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/CartContext';
 import ProductImage from '../../components/ProductImage/ProductImage';
@@ -5,6 +6,30 @@ import './Cart.css';
 
 function Cart() {
   const { items, updateQty, removeItem, totalPrice } = useCart();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  async function handleCheckout() {
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.error || 'Error desconocido');
+
+      window.location.href = data.url;
+    } catch (err) {
+      setError('No se pudo iniciar el pago. Inténtalo de nuevo.');
+      setLoading(false);
+    }
+  }
 
   if (items.length === 0) {
     return (
@@ -50,7 +75,12 @@ function Cart() {
           <span>Total</span>
           <span className="cart__summary-total">{totalPrice.toFixed(2)} €</span>
         </div>
-        <button className="cart__checkout-btn">Proceder al pago</button>
+
+        {error && <p className="cart__error">{error}</p>}
+
+        <button className="cart__checkout-btn" onClick={handleCheckout} disabled={loading}>
+          {loading ? 'Redirigiendo...' : 'Proceder al pago'}
+        </button>
         <Link to="/shop" className="cart__continue">Seguir comprando</Link>
       </div>
     </section>
