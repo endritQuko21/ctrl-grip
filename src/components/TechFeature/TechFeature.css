@@ -1,0 +1,108 @@
+.tech-feature {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.tech-feature__visual {
+  aspect-ratio: 1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tech-feature__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-graphite);
+  border: 1px solid var(--color-control-blue);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  justify-content: center;
+}
+
+.tech-feature__badge-number {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--color-control-blue);
+}
+
+.tech-feature__badge-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.1em;
+  color: var(--color-fog);
+}
+
+.tech-feature__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.12em;
+  color: var(--color-control-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.tech-feature__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+  line-height: 1.05;
+  margin-bottom: var(--space-sm);
+}
+
+.tech-feature__text {
+  color: var(--color-fog);
+  max-width: 46ch;
+  margin-bottom: var(--space-sm);
+}
+
+.tech-feature__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.tech-feature__list li {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-bone);
+  padding-left: var(--space-sm);
+  position: relative;
+}
+
+.tech-feature__list li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--color-control-blue);
+}
+
+.tech-feature__cta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-control-blue);
+  border-bottom: 1px solid var(--color-control-blue);
+  padding-bottom: 2px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .tech-feature {
+    grid-template-columns: 1fr;
+  }
+}
