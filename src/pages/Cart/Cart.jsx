@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/CartContext';
+import ProductImage from '../../components/ProductImage/ProductImage';
 import './Cart.css';
 
 function Cart() {
@@ -21,7 +22,7 @@ function Cart() {
       <div className="cart__list">
         {items.map((item) => (
           <div key={item.lineId} className="cart-item">
-            <img src={item.image} alt={item.name} className="cart-item__image" />
+            <ProductImage src={item.image} alt={item.name} className="cart-item__image" />
 
             <div className="cart-item__info">
               <span className="cart-item__name">{item.name}</span>

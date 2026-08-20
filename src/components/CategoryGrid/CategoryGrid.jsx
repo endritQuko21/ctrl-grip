@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { categories } from '../../data/categories';
+import ProductImage from '../ProductImage/ProductImage';
 import './CategoryGrid.css';
 
 function CategoryGrid() {
@@ -14,7 +15,7 @@ function CategoryGrid() {
         {categories.map((category) => (
           <Link key={category.id} to={category.path} className="category-card">
             <div className="category-card__image-wrap">
-              <img src={category.image} alt={category.name} className="category-card__image" />
+              <ProductImage src={category.image} alt={category.name} className="category-card__image" />
             </div>
             <div className="category-card__info">
               <h3 className="category-card__name">{category.name}</h3>

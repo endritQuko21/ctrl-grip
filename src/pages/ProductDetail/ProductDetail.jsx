@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getProductById } from '../../data/products';
 import { useCart } from '../../hooks/CartContext';
+import ProductImage from '../../components/ProductImage/ProductImage';
 import './ProductDetail.css';
 
 function ProductDetail() {
@@ -31,7 +32,7 @@ function ProductDetail() {
   return (
     <section className="product-detail">
       <div className="product-detail__image-wrap">
-        <img src={product.image} alt={product.name} className="product-detail__image" />
+        <ProductImage src={product.image} alt={product.name} className="product-detail__image" />
       </div>
 
       <div className="product-detail__info">
