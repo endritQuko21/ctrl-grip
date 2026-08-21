@@ -1,4 +1,3 @@
-// src/data/navLinks.js
 export const navLinks = [
   { label: 'Socks', path: '/shop/socks' },
   { label: 'Shinguards', path: '/shop/shinguards' },

@@ -1,4 +1,3 @@
-// src/data/products.js
 export const products = [
   {
     id: 'grip-socks-pro',
@@ -6,7 +5,7 @@ export const products = [
     category: 'socks',
     price: 24.95,
     image: '/assets/products/grip-socks-pro.jpg',
-    sizes: ['S', 'M', 'L'],
+    sizes: ['S', 'M'],
     description: 'Calcetín largo antideslizante con trama de silicona en toda la planta. Compresión gradual para mayor sensibilidad del balón.',
   },
   {

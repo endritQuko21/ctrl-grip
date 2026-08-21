@@ -30,34 +30,6 @@
   transform: scale(1.06);
 }
 
-.product-card__quick-add {
-  position: absolute;
-  left: var(--space-xs);
-  right: var(--space-xs);
-  bottom: var(--space-xs);
-  background: var(--color-bone);
-  color: var(--color-graphite);
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 11px;
-  border-radius: var(--radius-sm);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
-}
-
-.product-card:hover .product-card__quick-add {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.product-card__quick-add:hover {
-  background: var(--color-control-blue);
-  color: var(--color-bone);
-}
-
 .product-card__info {
   padding: var(--space-sm);
   display: flex;
@@ -85,14 +57,4 @@
   color: var(--color-control-blue);
   font-size: var(--fs-small);
   margin-top: 2px;
-}
-
-/* Touch devices: always show the quick-add button, hover doesn't exist */
-@media (hover: none) {
-  .product-card__quick-add {
-    opacity: 1;
-    transform: translateY(0);
-    position: static;
-    margin-top: var(--space-xs);
-  }
 }

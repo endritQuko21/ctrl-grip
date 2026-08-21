@@ -1,24 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useCart } from '../../hooks/CartContext';
 import ProductImage from '../ProductImage/ProductImage';
 import './ProductCard.css';
 
 function ProductCard({ product }) {
-  const { addItem } = useCart();
-
-  function handleQuickAdd(e) {
-    e.preventDefault();
-    addItem(product, product.sizes?.[0] || null, 1);
-  }
-
   return (
     <Link to={`/product/${product.id}`} className="product-card">
       <div className="product-card__image-wrap">
         <ProductImage src={product.image} alt={product.name} className="product-card__image" />
-
-        <button className="product-card__quick-add" onClick={handleQuickAdd}>
-          Añadir al carrito
-        </button>
       </div>
 
       <div className="product-card__info">
