@@ -5,10 +5,16 @@ import CategoryGrid from './components/CategoryGrid/CategoryGrid';
 import TechFeature from './components/TechFeature/TechFeature';
 import Testimonials from './components/Testimonials/Testimonials';
 import Footer from './components/Footer/Footer';
+import CookieBanner from './components/CookieBanner/CookieBanner';
 import Shop from './pages/Shop/Shop';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Cart from './pages/Cart/Cart';
 import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
+import Contact from './pages/Contact/Contact';
+import LegalNotice from './pages/Legal/LegalNotice';
+import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
+import TermsConditions from './pages/Legal/TermsConditions';
+import ReturnsPolicy from './pages/Legal/ReturnsPolicy';
 
 function Home() {
   return (
@@ -32,8 +38,14 @@ function App() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/legal-notice" element={<LegalNotice />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/returns-policy" element={<ReturnsPolicy />} />
       </Routes>
       <Footer />
+      <CookieBanner />
     </BrowserRouter>
   );
 }

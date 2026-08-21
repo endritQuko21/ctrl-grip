@@ -55,7 +55,14 @@ function Footer() {
           <h3 className="footer__col-title">Empresa</h3>
           <Link to="/technology" className="footer__link">Tecnología</Link>
           <Link to="/contact" className="footer__link">Contacto</Link>
-          <Link to="/shipping" className="footer__link">Envíos</Link>
+          <Link to="/returns-policy" className="footer__link">Devoluciones</Link>
+        </div>
+
+        <div className="footer__col">
+          <h3 className="footer__col-title">Legal</h3>
+          <Link to="/legal-notice" className="footer__link">Aviso Legal</Link>
+          <Link to="/privacy-policy" className="footer__link">Privacidad</Link>
+          <Link to="/terms-conditions" className="footer__link">Términos</Link>
         </div>
 
         <div className="footer__col">
