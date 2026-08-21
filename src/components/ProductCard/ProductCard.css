@@ -2,18 +2,18 @@
   display: flex;
   flex-direction: column;
   background: var(--color-surface);
-  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: transform var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+  transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  border-color: var(--color-control-blue);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
 .product-card__image-wrap {
+  position: relative;
   aspect-ratio: 1;
   background: var(--color-surface-elevated);
   overflow: hidden;
@@ -27,24 +27,72 @@
 }
 
 .product-card:hover .product-card__image {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.product-card__quick-add {
+  position: absolute;
+  left: var(--space-xs);
+  right: var(--space-xs);
+  bottom: var(--space-xs);
+  background: var(--color-bone);
+  color: var(--color-graphite);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 11px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+}
+
+.product-card:hover .product-card__quick-add {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card__quick-add:hover {
+  background: var(--color-control-blue);
+  color: var(--color-bone);
 }
 
 .product-card__info {
   padding: var(--space-sm);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.product-card__category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-fog);
 }
 
 .product-card__name {
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 0.95rem;
+  color: var(--color-bone);
 }
 
 .product-card__price {
   font-family: var(--font-mono);
   color: var(--color-control-blue);
   font-size: var(--fs-small);
+  margin-top: 2px;
+}
+
+/* Touch devices: always show the quick-add button, hover doesn't exist */
+@media (hover: none) {
+  .product-card__quick-add {
+    opacity: 1;
+    transform: translateY(0);
+    position: static;
+    margin-top: var(--space-xs);
+  }
 }

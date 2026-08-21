@@ -1,15 +1,14 @@
-/* src/styles/variables.css */
 :root {
   /* Color */
-  --color-graphite: #101114;
-  --color-surface: #1B1D22;
-  --color-surface-elevated: #24262D;
-  --color-bone: #F4F2ED;
-  --color-fog: #8B8F98;
-  --color-border: #2C2F36;
-  --color-control-blue: #2E5EFF;
-  --color-control-blue-hover: #4A75FF;
-  --color-grip-lime: #C8FF4D;
+  --color-graphite: #0A0A0B;
+  --color-surface: #161618;
+  --color-surface-elevated: #201F21;
+  --color-bone: #F7F7F5;
+  --color-fog: #8D8D92;
+  --color-border: #2B2B2D;
+  --color-control-blue: #E8262B;
+  --color-control-blue-hover: #FF3B3B;
+  --color-grip-lime: #C9C9CC;  
 
   /* Typography */
   --font-display: 'Archivo Black', 'Arial Black', sans-serif;
