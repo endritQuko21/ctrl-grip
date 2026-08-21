@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import Header from './components/Header/Header';
 import Hero from './components/Hero/Hero';
 import CategoryGrid from './components/CategoryGrid/CategoryGrid';
@@ -30,6 +31,7 @@ function Home() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
