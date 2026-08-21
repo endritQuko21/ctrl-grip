@@ -1,4 +1,5 @@
 import './LegalPage.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 function LegalNotice() {
   return (

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { useCart } from '../../hooks/CartContext';
 import './OrderConfirmation.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 function OrderConfirmation() {
   const [searchParams] = useSearchParams();

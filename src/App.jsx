@@ -16,6 +16,7 @@ import LegalNotice from './pages/Legal/LegalNotice';
 import PrivacyPolicy from './pages/Legal/PrivacyPolicy';
 import TermsConditions from './pages/Legal/TermsConditions';
 import ReturnsPolicy from './pages/Legal/ReturnsPolicy';
+import NotFound from './pages/NotFound/NotFound';
 
 function Home() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/returns-policy" element={<ReturnsPolicy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <CookieBanner />

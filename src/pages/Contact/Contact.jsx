@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });

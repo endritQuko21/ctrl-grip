@@ -4,6 +4,7 @@ import { getProductById } from '../../data/products';
 import { useCart } from '../../hooks/CartContext';
 import ProductImage from '../../components/ProductImage/ProductImage';
 import './ProductDetail.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -22,6 +23,11 @@ function ProductDetail() {
       </div>
     );
   }
+
+  usePageMeta({
+    title: product?.name,
+    description: product?.description,
+  });
 
   function handleAddToCart() {
     addItem(product, size, qty);

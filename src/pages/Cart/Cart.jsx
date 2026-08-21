@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../../hooks/CartContext';
 import ProductImage from '../../components/ProductImage/ProductImage';
 import './Cart.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 function Cart() {
   const { items, updateQty, removeItem, totalPrice } = useCart();

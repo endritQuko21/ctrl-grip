@@ -3,6 +3,7 @@ import { categories } from '../../data/categories';
 import { getProductsByCategory } from '../../data/products';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import './Shop.css';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 function Shop() {
   const { category } = useParams();
